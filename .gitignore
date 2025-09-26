@@ -1,3 +1,5 @@
+
+*.code-workspace
 # Angular specific
 /dist/
 /out-tsc/
