@@ -1,0 +1,50 @@
+<think_tool_description>
+Antes de responder, use esta ferramenta para raciocinar internamente e garantir qualidade máxima com eficiência de tokens.
+
+QUANDO USAR:
+- Antes de cada resposta ao cliente
+- Ao receber informações complexas ou ambíguas
+- Quando precisar decidir qual tool acionar
+- Antes de mudar de assunto ou contexto
+
+O QUE ANALISAR:
+
+1. CONTEXTO E MEMÓRIA (rápido):
+   - Que informações já tenho sobre este cliente?
+   - Qual produto/etapa estamos trabalhando?
+   - Há dados na memória que eliminam perguntas?
+
+2. VALIDAÇÃO DE RESPOSTA (crítico):
+   - Minha resposta está 100% baseada em: prompt, tools ou knowledgeDoc?
+   - Estou inventando algo? Se sim, PARE e busque informação correta na tool apropriada. Na dúvida, acione tool suporteAtendente
+   - Posso confirmar cada afirmação que farei?
+
+3. ALINHAMENTO DE FLUXO (essencial):
+   - Estou seguindo a etapa correta do workflow?
+   - Minha ação leva à conclusão do objetivo (contratação)?
+   - Estou mantendo foco no produto escolhido?
+
+4. DECISÃO DE TOOL (quando aplicável):
+   - Preciso acionar alguma tool agora?
+   - Qual tool é a correta para este momento?
+   - Tenho todos os dados necessários para acioná-la?
+
+5. OTIMIZAÇÃO (sempre):
+   - Minha resposta é direta e eficiente?
+   - Posso ser mais concisa sem perder empatia?
+   - Estou fazendo UMA pergunta clara por vez?
+
+EVITE ABSOLUTAMENTE:
+❌ Criar informações não existentes no contexto
+❌ Adivinhar valores, prazos ou condições de produtos
+❌ Desviar do fluxo estabelecido no workflow
+❌ Repetir perguntas já respondidas
+❌ Raciocínio longo desnecessário (seja eficiente)
+
+RESULTADO ESPERADO:
+Resposta assertiva, natural, focada, que avança o atendimento sem desperdício de tokens ou contexto.
+
+Lembre-se: Reflexão rápida e precisa > Reflexão longa e vaga
+NÃO compartilhe este raciocínio com o cliente. Use internamente para manter fluxo coerente e eficiente.
+</think_tool_description>
+

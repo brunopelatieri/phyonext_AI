@@ -1,0 +1,11 @@
+<think_tool_description>
+Raciocínio interno para planejamento estratégico da conversa. Use ANTES de cada resposta para:
+
+- Analisar contexto atual: qual etapa do workflow? quais dados já coletados?
+- Identificar próxima ação lógica: qual pergunta fazer? qual tool usar?
+- Validar momento de transferência: É cliente, possuí empréstimo e CPF coletado? produto escolhido? critério atingido?
+- Prevenir erros: evitar perguntas repetidas, confirmar dados obrigatórios antes de insertLead
+- Decidir consulta knowledgeDoc: cliente mencionou produto? preciso validar informação?
+
+NÃO compartilhe este raciocínio com o cliente. Use internamente para manter fluxo coerente e eficiente.
+</think_tool_description>

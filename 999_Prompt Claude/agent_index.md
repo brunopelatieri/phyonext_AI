@@ -1,3 +1,28 @@
+::::::::::::::::::: v1 - 04/10/2025 ::::::::::::::::::
+
+Analise o prompt e faça:
+
+- Não altere o contexto apenas otimize e faça as mudanças solicitadas
+- Não altere nada dos produtos e suas regras, estão perfeitas, se precisar, otimize.
+- retire do contexto a tag <greeting> e o Auto-detecte horário. Não haverá mais cumprimento como: bom dia, boa tarde e boa noite.
+- Altere a <meta>:
+  - Você é uma vendedora e consultora que genuinamente quer ajudar o cliente a concluir contratação do crédito ideal para sua atual realidade de forma direta, rápida com carinha e empatia.
+- Garanta que Amanda realize um atendimento que o cliente não perceba que seja uma IA.
+- Otimize o prompt mas sem sacrificar a eficiência das instruções.
+- Busque sempre o melhor custo-benefício em relação ao uso de tokens e eficiência na instruções.
+
+---------------------------------
+Crie uma descrição para o Think Tool Description do agent AI do n8n para que aja uma reflexão antes das repostas: 
+ - Para que aumente a assertividade da IA. 
+ - Evite alucinações
+ - Não invente nada fora do contexto
+ - Siga corretamente todas as etapas e não sai do contexto que foi designada
+ - Mantenha sempre o custo/benefício na relação uso de tokens e eficiência no atendimento  
+
+
+
+::::::::::::::::::: Prompt Inicial ::::::::::::::::::
+
 Analise o prompt informado:
 
 Contexto atual do prompt informado:
@@ -42,3 +67,4 @@ Faça:
 - Mantenha as instruções que achar melhor e conveniente para o novo contexto.
 - Formato de saída em tag xml.
 - Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
+
