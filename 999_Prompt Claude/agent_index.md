@@ -1,3 +1,48 @@
+
+
+::::::::::::::::::: v1 - 06/10/2025 ::::::::::::::::::
+
+--------------------- Sub Agent FGTS Que não possui simulação ------------------
+Crie uma versão do prompt sub agent AI tool credit_fgts (Sub-agente Antecipação FGTS Saque-Aniversário) que não possui a tool simulationFGTS: Executa simulação de saldo FGTS.
+Nesse contexto, sem a tool simulationFGTS, não é possível fazer a simulação e, sendo assim, não há necessidade dos seguintes passos:
+- PASSO 3: AUTORIZAÇÃO DE CONSULTA - Não é necessário nesse contexto sem simulação
+- PASSO 4: SIMULAÇÃO - Não é necessário nesse contexto sem simulação 
+- PASSO 5: RESULTADO - Não é necessário nesse contexto sem simulação 
+
+Refaça o prompt levando em consideração as instruções acima.
+Mantenha todo o resto que não está vinculado tool simulationFGTS.
+Otimize o novo prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
+
+
+--------------------- Sub Agent FGTS ------------------
+Analise o prompt sub agent AI tool credit_fgts (Sub-agente Antecipação FGTS Saque-Aniversário). 
+O prompt sub agent AI do prompt principal persona Amanda.
+Assim como foi feito com o prompt sub agent AI tool credit_clt (Sub-agente Crédito Consignado CLT).
+Faça:
+- Altere o nome das tools:
+   - guardardadosclt para insertCLT
+   - guardardados para insertFGTS
+- Instrui para não solicitar novamente os dados solicitado no agente principal como o nome e CPF, procure na memória ou nos tools
+- Mantenha o contexto mas otimize para trabalhar com o agent AI principal Amanda 
+- Mantenha as instruções que achar melhor e conveniente para o novo contexto, porem as regras de credito FGTS não podem ser alterada
+- Formato de saída em tag xml.
+- Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
+
+--------------------- Sub Agent CLT ------------------
+
+Analise o prompt sub agent AI tool credit_clt (Sub-agente Crédito Consignado CLT). 
+O prompt sub agent AI do prompt principal persona Amanda.
+Seguindo o prompt principal informado anteriormente, faça:
+- Altere o nome das tools:
+   - guardardadosclt para insertCLT
+   - guardardados para insertFGTS
+- Instrui para não solicitar novamente os dados solicitado no agente principal como o nome e CPF, procure na memória ou nos tools
+- Mantenha o contexto mas otimize para trabalhar com o agent AI principal Amanda 
+- Mantenha as instruções que achar melhor e conveniente para o novo contexto.
+- Formato de saída em tag xml.
+- Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
+
+
 ::::::::::::::::::: v1 - 04/10/2025 ::::::::::::::::::
 
 Analise o prompt e faça:
@@ -18,7 +63,6 @@ Crie uma descrição para o Think Tool Description do agent AI do n8n para que a
  - Não invente nada fora do contexto
  - Siga corretamente todas as etapas e não sai do contexto que foi designada
  - Mantenha sempre o custo/benefício na relação uso de tokens e eficiência no atendimento  
-
 
 
 ::::::::::::::::::: Prompt Inicial ::::::::::::::::::
