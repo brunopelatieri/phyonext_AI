@@ -1,47 +1,17 @@
-
-
-::::::::::::::::::: v1 - 06/10/2025 ::::::::::::::::::
-
---------------------- Sub Agent FGTS Que não possui simulação ------------------
-Crie uma versão do prompt sub agent AI tool credit_fgts (Sub-agente Antecipação FGTS Saque-Aniversário) que não possui a tool simulationFGTS: Executa simulação de saldo FGTS.
-Nesse contexto, sem a tool simulationFGTS, não é possível fazer a simulação e, sendo assim, não há necessidade dos seguintes passos:
-- PASSO 3: AUTORIZAÇÃO DE CONSULTA - Não é necessário nesse contexto sem simulação
-- PASSO 4: SIMULAÇÃO - Não é necessário nesse contexto sem simulação 
-- PASSO 5: RESULTADO - Não é necessário nesse contexto sem simulação 
-
-Refaça o prompt levando em consideração as instruções acima.
-Mantenha todo o resto que não está vinculado tool simulationFGTS.
-Otimize o novo prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
-
-
---------------------- Sub Agent FGTS ------------------
-Analise o prompt sub agent AI tool credit_fgts (Sub-agente Antecipação FGTS Saque-Aniversário). 
-O prompt sub agent AI do prompt principal persona Amanda.
-Assim como foi feito com o prompt sub agent AI tool credit_clt (Sub-agente Crédito Consignado CLT).
+::::::::::::::::::: v3 - 07/10/2025 ::::::::::::::::::
+Analise o prompt AgentIndex.
+Esse prompt não está informando o nome certo do cliente para as tool.
 Faça:
-- Altere o nome das tools:
-   - guardardadosclt para insertCLT
-   - guardardados para insertFGTS
-- Instrui para não solicitar novamente os dados solicitado no agente principal como o nome e CPF, procure na memória ou nos tools
-- Mantenha o contexto mas otimize para trabalhar com o agent AI principal Amanda 
-- Mantenha as instruções que achar melhor e conveniente para o novo contexto, porem as regras de credito FGTS não podem ser alterada
-- Formato de saída em tag xml.
-- Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
-
---------------------- Sub Agent CLT ------------------
-
-Analise o prompt sub agent AI tool credit_clt (Sub-agente Crédito Consignado CLT). 
-O prompt sub agent AI do prompt principal persona Amanda.
-Seguindo o prompt principal informado anteriormente, faça:
-- Altere o nome das tools:
-   - guardardadosclt para insertCLT
-   - guardardados para insertFGTS
-- Instrui para não solicitar novamente os dados solicitado no agente principal como o nome e CPF, procure na memória ou nos tools
-- Mantenha o contexto mas otimize para trabalhar com o agent AI principal Amanda 
+- Ajuste as instruções do prompt para checar se o nome e o cpf está na memória ou no input ou na tool insertLead.
+- Tenha certeza que é um nome e um cpf de humano e não parte de instruções do prompt
+- O CPF tem no mínimo 11 números e no máximo 14 caracteres contanto números, pontos e traços.
+- Caso não tenha certeza do nome e/ou cpf solicite
+- Nunca forneça como dados do cliente qualquer informação do prompt
+- Não altere de jeito nenhum as variáveis do n8n no prompt
+- Mantenha o contexto geral do prompt mas altere o que for preciso para ajustar o problema do nome e o cpf do cliente antes de acionar as tools
 - Mantenha as instruções que achar melhor e conveniente para o novo contexto.
 - Formato de saída em tag xml.
 - Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
-
 
 ::::::::::::::::::: v1 - 04/10/2025 ::::::::::::::::::
 

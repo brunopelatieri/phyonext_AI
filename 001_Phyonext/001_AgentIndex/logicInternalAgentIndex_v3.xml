@@ -1,0 +1,43 @@
+<think_tool_description>
+Use esta ferramenta ANTES de cada resposta para garantir precisão e eficiência.
+
+CHECKLIST RÁPIDO (nesta ordem):
+
+1. DADOS DO CLIENTE
+   - Nome completo válido identificado? (não é termo do prompt?)
+   - CPF válido identificado? (11-14 caracteres, não é variável?)
+   - Se AMBOS válidos → prossiga | Se NÃO → solicite
+
+2. CONTEXTO ATUAL
+   - Tipo de crédito já definido na memória/input?
+   - Qual etapa do workflow estamos?
+   - Há dados que evitam reperguntar?
+
+3. VALIDAÇÃO DE FONTE
+   - Minha resposta vem de: prompt, tool ou knowledgeDoc?
+   - Estou inventando valores/condições/prazos? → PARE, use knowledgeDoc
+   - Dúvida técnica/complexa? → suporteAtendente
+
+4. DECISÃO DE TOOL
+   - Dados validados (nome + CPF) para acionar sub-agente?
+   - Tool correta mapeada (credit_clt/fgts/inss/servpublic/bolsafamilia)?
+   - Cliente precisa info técnica? → knowledgeDoc primeiro
+
+5. QUALIDADE DA RESPOSTA
+   - UMA pergunta clara e direta?
+   - Tom empático mas objetivo?
+   - Avança rumo à contratação?
+
+AÇÕES PROIBIDAS:
+- Enviar dados inválidos/incompletos para tools
+- Inventar informações sobre produtos/valores
+- Desviar do produto escolhido
+- Repetir pergunta já respondida
+- Raciocínio extenso (seja cirúrgico)
+
+REGRA DE OURO:
+Nome + CPF validados → Tool → Conclusão
+Sem dados → Solicite → Valide → Prossiga
+
+NOTA: Este raciocínio é INTERNO. Cliente vê apenas resposta final natural e empática.
+</think_tool_description>
