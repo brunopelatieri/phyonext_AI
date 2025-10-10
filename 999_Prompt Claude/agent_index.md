@@ -1,3 +1,62 @@
+
+::::::::::::::::::: v4 - 10/10/2025 ::::::::::::::::::
+
+-------------- Prompt exclusivo CSMais - não trabalha com Discovery
+
+Analise o prompt enviado.
+Após analise, faça:
+- Altere o nome das tools:
+   * creditodotrabalhador para credit_clt
+   * creditofgts: para credit_fgts
+   * Mantenha as instruções das tools credit_clt e credit_fgts mas otimize para o contexto atual.
+- Acrescente a tool knowledgeDoc. Base completa com as informações de: produtos, serviços, institucionais e outras informações da empresa que oferece os serviços de crédito.
+- A tool knowledgeDoc será acionado de acordo com o item: "COMO LIDAR COM OBJEÇÕES (COM EMPATIA)" quando necessitar de dados da empresa. 
+- Deixe claro que a atendente Amanda é especialista apenas em Crédito Consignado (Crédito do Trabalhador) e Empréstimo Saque-Aniversário (Antecipação do FGTS) e não ofereça outras modalidades de crédito.
+- Se o cliente insistir em outra modalidade de crédito que não seja Crédito Consignado (Crédito do Trabalhador) e Empréstimo Saque-Aniversário (Antecipação do FGTS) encerre o atendimento com uma mensagem direta mas carinhosa.
+- Procure por ambiguidades e corrija.
+- Analise cada instrução e otimize para que sejam interpretadas de forma a obter o melhor atendimento para venda de Crédito Consignado (Crédito do Trabalhador) e Empréstimo Saque-Aniversário (Antecipação do FGTS).
+- Mantenha as instruções que achar melhor e conveniente para o novo contexto.
+- Formato de saída em tag xml.
+- Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
+
+--------------------------------------
+
+Analise o prompt enviado.
+Após analise, faça:
+
+Retire a tools:
+ - credit_inss: Crédito Consignado INSS
+ - credit_servpublic: Crédito Servidor Público
+ - credit_bolsafamilia: Crédito Bolsa Família
+Refaça as Instruções para p novo contexto
+- Analise cada instrução e otimize para que sejam interpretadas de forma a obter o melhor atendimento para venda de Crédito Consignado (Crédito do Trabalhador tool-> credit_clt ) e Empréstimo Saque-Aniversário (Antecipação do FGTS tool-> credit_fgts).
+- Mantenha as instruções que achar melhor e conveniente para o novo contexto.
+- Formato de saída em tag xml.
+- Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
+
+
+
+::::::::::::::::::: v4 - 09/10/2025 ::::::::::::::::::
+
+Analise o prompt de atendimento n8n node AI de nome "AgentIndex" responsável por estabelecer o crédito de interesse do cliente e redirecionar para tool especifica:
+
+
+Após analise, implemente:
+- Implementar a tag finalization_messages caso tenha que acionar a tool suporteAtendente. Após acionar a tool suporteAtendente o atendimento é bloqueado e encerrado. 
+  Antes enviar mensagem da tag finalization_messages com algo do tipo:
+  "Pronto! Vou te conectar com nosso especialista. Fica tranquilo!"
+  "Perfeito! Agora nosso time especializado assume para concluir sua análise. Continue aqui que em instantes te atendem!"
+  "Muito obrigado! A partir de agora nossa equipe dará o suporte necessário!"
+- Horário comercial no Brasil UTC -3 é 8:00 até as 18:00 (sistema horário de 24 horas) de segunda a sexta. Sábado das 8:00 até às 12:00 (sistema horário de 24 horas).
+- Após o horário comercial alterar a mensagem de acionamento do tool suporteAtendente. Elabore as mensagens através das instruções abaixo:
+   - deixa eu ver se temos algum especialista disponível agora pra te atender ! Mas , se estiver fora do horário comercial pode ser que não localize , mas assim que começarem a atender , você será chamado ! 
+   - Dizer que no horário comercial , um especialista irá chamar algo assim !! Que pode aguardar que um de nossos especialistas vão chamar !
+   - E dizer , fique atento , pois se preferir , tiver complicado pra você atender em horário comercial , combine melhor horário e dia que um de nossos especialistas te liga!
+- Apenas implementa essa funcionalidade e adapte ao contexto.
+- Não altera contexto de forma alguma se precisar faça correções no prompt
+- Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
+
+  
 ::::::::::::::::::: v3 - 07/10/2025 ::::::::::::::::::
 Analise o prompt AgentIndex.
 Esse prompt não está informando o nome certo do cliente para as tool.
