@@ -1,0 +1,21 @@
+# Text Classifier - Compact Version para n8n
+
+## CREDITO_INSS
+Aposentado/pensionista INSS + qualquer crédito, portabilidade, refinanciamento, refin, trocar banco, juros baixos, reduzir parcela, troco, mudar banco, desconto aposentadoria.
+- Palavras-chave: INSS, aposentado, pensionista, portabilidade, refin, trocar, portar, juros baixos, reduzir
+- PRIORIDADE: Se "portabilidade|refin|trocar" + FGTS/Bolsa/CLT → CREDITO_INSS
+
+## ANTECIPACAO_FGTS
+Saque ou antecipação de FGTS. Apenas quando não há "portabilidade", "refin" ou "renovar empréstimo".
+- Palavras-chave: FGTS, saque aniversário, antecipação, liberar FGTS, Fundo Garantia
+- EXCLUSÃO: Se "portabilidade", "refin" ou "renovação" → CREDITO_INSS
+
+## CREDITO_BOLSA_FAMILIA
+Bolsa Família/Auxílio Brasil como base de crédito. Apenas quando não há "portabilidade" ou "trocar banco".
+- Palavras-chave: Bolsa Família, Auxílio Brasil, BF, benefício social, CadÚnico, governo programa
+- EXCLUSÃO: Se "portabilidade", "refin", "mudar banco" → CREDITO_INSS
+
+## CREDITO_DO_TRABALHADOR
+CLT/carteira assinada sem "portabilidade" ou "refinanciamento".
+- Palavras-chave: CLT, carteira assinada, funcionário, desconto folha, empregado formal
+- EXCLUSÃO: Se "portabilidade", "refin", "trocar" → CREDITO_INSS

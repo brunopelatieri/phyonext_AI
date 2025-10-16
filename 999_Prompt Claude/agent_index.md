@@ -1,3 +1,26 @@
+::::::::::::::::::: v5 - 14/10/2025 ::::::::::::::::::
+
+------------- Prompt entrada no INSS, Portabilidade e Refinanciamento -----------------------------------------
+
+Analise o prompt enviado de atendimento n8n node AI de nome "AgentIndex" responsável por estabelecer o crédito de interesse do cliente e redirecionar para tool especifica.
+
+Após analise, faça:
+   - adicione mais um produto seguindo o contexto dos outros que sera o crédito consignado INSS que possui essas características:
+
+      O crédito consignado INSS oferece benefícios importantes, como taxas de juros mais baixas (com teto de até 1,66% ao mês), prazo de pagamento estendido de até 96 meses, desconto direto nas parcelas no benefício, e facilidade na contratação 100% digital. 
+      É uma opção vantajosa para aposentados e pensionistas que buscam financiar planos pessoais ou reorganizar sua vida financeira.
+      Nessa modalidade é possível o Refinanciamento (inclui consignado e benefícios com margem consignável: INSS, LOAS/BPC, servidores): Operação para renegociar ou alongar dívidas existentes, criando novo contrato.
+   Portabilidade de crédito consignado: Transferência de um contrato consignado para outro agente/contrato com condições diferentes.
+      Assim, a escolha entre portabilidade e refinanciamento depende do objetivo do contratante: melhor taxa de juros e mudança de banco (portabilidade) ou melhoria das condições sem trocar de instituição (refinanciamento)
+
+   - adicione mais uma tool credit_inss que será acionada para finalização após escolha do cliente
+   - na tag communication reforçar o uso 1ª pessoa (eu/nós) e evitar uso 3ª pessoa (a empresa/o sistema/eles)
+   - Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
+
+
+
+
+
 
 ::::::::::::::::::: v4 - 10/10/2025 ::::::::::::::::::
 

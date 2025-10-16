@@ -1,3 +1,19 @@
+# Text Classifier - Compact Version para n8n
+
+## ANTECIPACAO_FGTS
+- Termos diretos: "FGTS", "Fundo de Garantia", "saque aniversário", "antecipação FGTS", "empréstimo FGTS"
+- Variações: "consignado FGTS", "garantia FGTS", "crédito FGTS", "adiantamento saque"
+- Contextos específicos: "aniversário do FGTS", "liberar FGTS", "usar FGTS como garantia"
+- Siglas relacionadas: "modalidade aniversário"
+
+## CREDITO_DO_TRABALHADOR
+- Termos diretos: 
+- Contextos CLT: "trabalho de carteira assinada", "empregado CLT", "funcionário registrado", 
+- Variações: , "crédito do trabalhador" "credito clt"
+
+IMPORTANTE: Se mencionar FGTS junto com consignado, priorize sempre "CLT"
+
+## CREDITO_BOLSA_FAMILIA
 - Termos diretos: "Bolsa Família", "consignado Bolsa", "empréstimo Bolsa Família", "Auxílio Brasil"
 - Variações populares: "empréstimo do benefício", "usar o benefício pra empréstimo", "crédito do auxílio", "consignado do programa", "empréstimo no auxílio"
 - Siglas: "BF", "consignado BF"
