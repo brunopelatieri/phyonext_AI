@@ -1,6 +1,142 @@
+:::::::::::::::::::::::::::::::::::: Servidores Públicos ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+------------ v1 Initial Prompt 16/10/2025 -----------------------------
+Seguindo o padrão dos Sub-agente que trabalha dentro do contexto do "AgentIndex", crie a tool credit_servidores, especialista em crédito consignado para servidores públicos municipais, estaduais e federais.
+Elabore as perguntas de forma direta mas carinhosa para qualificar o cliente seguindo detalhes abaixo:
+    - CONVENIO (DE QUAL AREA A PESSOA VEM)
+    - É EFETIVO? (CONTRATADO NÃO FAZ) OU É APOSENTANDO DA AREA? (APOSENTADOS FAZEM)
+    - EXTRATO CONSIGNADO DO BENEFICIO (O MAIS RECENTE POSSÍVEL)
+    - Utilizar a tool insertServidores (planilha) para guardar os dados das perguntas
+    - CASO O CLIENTE NÃO CONSIGA PUXAR O EXTRATO ACIONAR O SUPORTE PARA AUXILIA-LO, tool suporteAtendente.
+    - CASO ENVIE O EXTRATO ACIONAR O VENDEDOR PARA ANALISE E FINALIZAÇÃO tool suporteAtendente.
+  
+Para ajudar a formular as perguntas pode utilizar esse dados de conhecimento:
+    - O crédito para servidores públicos municipais, estaduais e federais, em sua maioria, refere-se ao empréstimo consignado, modalidade em que as parcelas são descontadas diretamente da folha de pagamento do servidor. Esta modalidade é bastante vantajosa, pois oferece juros menores, prazos mais longos e maior segurança tanto para o credor quanto para o tomador do crédito.
+    - Quem Pode Contratar:
+        Servidores públicos federais civis ativos, aposentados e pensionistas (exemplo: crédito SIAPE).
+
+        Servidores públicos estaduais e municipais.
+
+        Servidores das forças armadas, judiciário e legislativo, dependendo da instituição financeira conveniada.
+
+Otimização:
+    - Elabore quais serão os campos para guardar as respostas das perguntas de qualificação para serem utilizadas na tool insertServidores (planilha)
+    - Reforçar que os passos da tag workflow devem ser seguidos em sequência rigorosamente.
+    - Verifique se possui ambiguidades nas instruções que possam causar problema de interpretações
+    - Mantenho o contexto coeso e preciso
+    - Otimize ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade
+
+--------------- Text Classifier detectar INSS 22/10/2025 --------------------------
+
+Crie uma descrição para LLM que atua em "Category" para node Text Classifier do n8n classificar e detectar interesse em crédito consignado para servidores públicos municipais, estaduais e federais.
+Faça um pesquisa profunda na internet para descobrir como as pessoas comuns solicitam este tipo de crédito para as financeiras via atendimento de whatsapp ou outros tipos de atendimento.
+Contexto:
+ - Os dados chegam via conversa de whatsapp e precisam ser classificados pelo node Text Classifier
+ - Já existe as seguintes "Category" e sua descrição para model LLM no node Text Classifier do n8n:
+   - ANTECIPACAO_FGTS: 
+        Saque ou antecipação de FGTS. Apenas quando não há "portabilidade", "refin" ou "renovar empréstimo".
+        - Palavras-chave: FGTS, saque aniversário, antecipação, liberar FGTS, Fundo Garantia
+        - EXCLUSÃO: Se "portabilidade", "refin" ou "renovação" → CREDITO_INSS
+   - CREDITO_DO_TRABALHADOR:
+        CLT/carteira assinada sem "portabilidade" ou "refinanciamento".
+        - Palavras-chave: CLT, carteira assinada, funcionário, desconto folha, empregado formal
+        - EXCLUSÃO: Se "portabilidade", "refin", "trocar" → CREDITO_INSS
+
+   - CREDITO_BOLSA_FAMILIA:
+        Bolsa Família/Auxílio Brasil como base de crédito. Apenas quando não há "portabilidade" ou "trocar banco".
+        - Palavras-chave: Bolsa Família, Auxílio Brasil, BF, benefício social, CadÚnico, governo programa
+        - EXCLUSÃO: Se "portabilidade", "refin", "mudar banco" → CREDITO_INSS
+
+    - CREDITO_INSS:
+        Aposentado/pensionista INSS + qualquer crédito, portabilidade, refinanciamento, refin, trocar banco, juros baixos, reduzir parcela, troco, mudar banco, desconto aposentadoria.
+        - Palavras-chave: INSS, aposentado, pensionista, portabilidade, refin, trocar, portar, juros baixos, reduzir
+        - PRIORIDADE: Se "portabilidade|refin|trocar" + FGTS/Bolsa/CLT → CREDITO_INSS
+
+A partir do contexto fornecido faça o mesmo com a "Category": CREDITO_SERVIDORES 
+Na instrução "IMPORTANTE, refaça com as seguintes alterações:
+    - Se mencionar FGTS com consignado priorize crédito INSS, portabilidade e refinanciamento (CREDITO_INSS) e se for servidores públicos da ativo ou aposentados priorize CREDITO_SERVIDORES
+    - Se mencionar Bolsa familia com consignado priorize crédito INSS, portabilidade e refinanciamento (CREDITO_INSS) e se for servidores públicos da ativo ou aposentados priorize CREDITO_SERVIDORES
+  
+Após criar a descrição do Text Classifier referente Category "CREDITO_SERVIDORES", escrevas todas as "Category" e suas respectivas descrição no novo contexto com todas as classificações:
+    - ANTECIPACAO_FGTS
+    - CREDITO_DO_TRABALHADOR
+    - CREDITO_BOLSA_FAMILIA
+    - CREDITO_INSS
+    - CREDITO_SERVIDORES
+
+Verifique se possui ambiguidades nas instruções que possam causar problema de interpretações para classificar
+Otimize as instruções ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade
+
+
+------------ v1 Initial Prompt 16/10/2025 -----------------------------
+
+Faça as correções:
+    - Corrija o nome da tool de credit_servidores para credit_servpublic
+    - Retirar: Nenhuma/Recusa → suporteAtendente com motivo
+    - No caso do cliente não quiser nenhum crédito, não acione a tool suporteAtendente envie uma mensagem que sempre estará disponível quando ele decidir adquirir crédito e encerre o atendimento.
+    - Altere a tag  business_hours e a tag finalization_messages para o contexto abaixo:
+            <business_hours>
+            Segunda-Sexta 08:00-18:00 | Sábado 08:00-12:00 | Domingo Fechado (UTC-3)
+            </business_hours>
+
+            <finalization_messages>
+            SEMPRE envie mensagem ANTES de acionar suporteAtendente.
+            Identifique automaticamente o horário atual e use a mensagem apropriada:
+
+            DENTRO DO HORÁRIO COMERCIAL (seg-sex 08h-18h, sáb 08h-12h):
+            "Pronto! Já encaminhei tudo para nosso especialista. 😊
+
+            Estamos com uma demanda um pouco alta hoje, então o atendimento pode levar alguns minutinhos.
+
+            Mas fica tranquilo(a)! Assim que o especialista estiver disponível, ele te atende com toda atenção que você merece.
+
+            Obrigado pela paciência! 💙"
+
+            FORA DO HORÁRIO COMERCIAL (seg-sex antes 08h ou após 18h, sáb após 12h, domingo):
+            "Pronto! Já encaminhei tudo para nosso especialista. 😊
+
+            Estamos fora do horário comercial (seg-sex 8h-18h, sáb 8h-12h) e com uma demanda um pouco alta, então pode demorar um pouquinho mais.
+
+            Mas fique tranquilo(a)! Assim que começarmos a atender, você vem primeiro na fila. 💙"
+
+            PROTOCOLO OBRIGATÓRIO:
+            1. Identifique horário atual (UTC-3)
+            2. Escolha mensagem apropriada
+            3. Envie mensagem completa
+            4. Aguarde 2 segundos
+            5. Acione suporteAtendente (FIM)
+            </finalization_messages>
+
+Sempre verifique ambiguidades
+Mantenha o contexto coeso e a otimização
+
+
 :::::::::::::::::::::::::::::::::::: INSS, Portabilidade e Refinanciamento ::::::::::::::::::::::::::::::::::::::::::::::::::
 
------------- v2 Modificação para retirar a validação de Nome e CPF que esta causando problema ------------------------
+------------ v4 Modificação Michele (atendente estamos com alta demanda) workflow para simplificar 21/10/2025 ----------------------------------------------------------------
+
+Altere na tag finalization_messages e coloque algo como:
+    - estamos com uma alta demanda e o atendimento de um especialista pode demorar um pouco.
+    - coloque de uma forma educada e carinhosa
+    - sempre antes de enviar para a tool suporteAtendente
+
+
+------------ v3 Modificação do workflow para simplificar 21/10/2025 -----------------------------------------------------------------
+Analise o prompt credit_inss informado:
+
+Após analise, faça:
+    - Resuma o passo 4 e 5 para seguinte instrução:
+        "Me ajuda a atender seu caso:
+        - Você acredita que ainda possui margem consignada disponível para novo crédito?
+        - Você não possui margem consignada disponível e quer fazer uma portabilidade/refinanciamento de contrato ativo?
+        - Você quer novo cartão consignado ou cartão benefício?"
+    - Faça os ajustes necessário nos outros passos para que sequência fique coesa.
+    - Reforçar que os passos da tag workflow devem ser seguidos em sequência rigorosamente.
+    - Verifique se possui ambiguidades nas instruções que possam causar problema de interpretações
+    - Mantenho o contexto coeso e preciso
+    - Otimize ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade
+
+------------ v2 Modificação para retirar a validação de Nome e CPF que esta causando problema 14/10/2025 -----------------------------
 
 Apenas acrescente no prompt instruções para caso não qualifique para credit_inss ofereça outros créditos do AgentIndex principal.
 Mantenha o contexto e a otimização.
@@ -16,7 +152,7 @@ Modifique o prompt credit_inss:
     - Mantenho o contexto coeso e preciso
     - Otimize ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade
 
------------- v1 - Primeiro Prompt 14/10/2025 -------------------------------------------------------------------
+------------ v1 - Primeiro Prompt 14/10/2025 -----------------------------------------------------------------------------------------
 
 Analise o prompt Sub-agente Crédito Consignado INSS, Portabilidade e Refinanciamento (tool credit_inss do "AgentIndex") enviado.
 
@@ -70,6 +206,18 @@ Após criar a descrição do Text Classifier referente Category "CREDITO_INSS", 
 Otimize as instruções ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
 
 :::::::::::::::::::::::::::::::::::: Bolsa Família  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+------------ v3 Modificação do workflow sobre o caso CREFISA 21/10/2025 -----------------------------------------------------------------
+Analise o prompt credit_bolsafamilia informado:
+
+Após analise, faça:
+    -  Se cliente disser que não CREFISA ou não quer o Credito mesmo depois do oferecer outras opções de crédito - agradeça com uma mensagem e não transferia para atendente humano tool suporteAtendente.
+    - Reforçar que os passos da tag workflow devem ser seguidos em sequência rigorosamente.
+    - Verifique se possui ambiguidades nas instruções que possam causar problema de interpretações
+    - Mantenho o contexto coeso e preciso
+    - Otimize ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade 
+
+
 
 ----------------- v2 - atualização para tool insertBolsaFamilia 14/10/2025 ---------
 

@@ -1,0 +1,32 @@
+# Text Classifier Ultra-Compact - n8n
+
+## CREDITO_SERVIDORES
+Servidor público (federal|estadual|municipal|SIAPE|concursado|funcionalismo|órgão público|prefeitura|governo) + crédito|consignado|portabilidade|refin|trocar|margem|folha.
+- **PRIORIDADE 1**: Servidor + qualquer contexto → SEMPRE esta categoria
+- **Exclusão**: Nenhuma (máxima prioridade)
+
+## CREDITO_INSS
+Aposentado|pensionista INSS + crédito|consignado|portabilidade|refin|trocar|reduzir|benefício|previdência.
+- **PRIORIDADE 2**: INSS + portabilidade/refin → esta categoria
+- **Exclusão**: Se servidor público mencionado → CREDITO_SERVIDORES
+
+## ANTECIPACAO_FGTS
+FGTS|saque aniversário|Fundo Garantia|antecipação isolado.
+- **Apenas**: FGTS puro sem portabilidade/refin/servidor/consignado
+- **Exclusão**: portabilidade|refin|servidor|consignado → reavaliar contexto
+
+## CREDITO_DO_TRABALHADOR
+CLT|carteira assinada|empresa privada|empregado formal isolado.
+- **Apenas**: CLT puro sem portabilidade/refin/servidor
+- **Exclusão**: portabilidade|refin|servidor → reavaliar contexto
+
+## CREDITO_BOLSA_FAMILIA
+Bolsa Família|Auxílio Brasil|BF|CadÚnico|benefício social isolado.
+- **Apenas**: Bolsa pura sem portabilidade/refin/servidor
+- **Exclusão**: portabilidade|refin|servidor → reavaliar contexto
+
+## ORDEM DE AVALIAÇÃO
+1. Servidor público? → **CREDITO_SERVIDORES**
+2. INSS + portabilidade/refin? → **CREDITO_INSS**
+3. Portabilidade/refin geral? → **CREDITO_INSS**
+4. Produto específico isolado? → categoria específica
