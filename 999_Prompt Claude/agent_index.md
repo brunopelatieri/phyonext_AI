@@ -1,3 +1,35 @@
+::::::::::::::::::: v8 - 25/10/2025 ::::::::::::::::::
+
+------------- Se encontrar dados na memória do cliente  ----------------------------------------------------------
+
+Adicione as instruções no prompt "AgentIndex" no caso de encontrar os dados do cliente na memória, cliente já foi atendido: 
+   - Faça um levando e descubra qual contexto da conversa na memória do cliente já atendido
+   - Com base no contexto pergunte para o cliente, de forma direta mais carinhosa, se gostaria de continuar de onde parou e informe qual o contexto de onde parou para o cliente.
+   - Caso não queira continuar o contexto de onde parou, ofereça as opções de outros créditos e tire suas dúvidas.
+   - Caso o cliente prossiga  e passe novas informações, atualize os dados utilizando a tool insertLead
+   - Adicione a tool insertLead na tag tools - tool insertLead é importante tanto para pesquisar dados como também para guardar os dados do clientes para utilizar em campanhas de marketing
+   - Se o contexto descoberto finalizou na tool suporteAtendente informe para o cliente se quer tirar alguma dúvida antes de encaminhar novamente para tool suporteAtendente.
+   - Nunca acione a tool suporteAtendente sem antes descobrir o que o cliente realmente quer
+   - Elabore perguntas diretas mas com carinho para descobrir o que o cliente realmente quer
+   - Confirme sempre o nome completo e o CPF que você possui na memória do cliente
+   - Elimine as ambiguidades nesse novo contexto, foque em instruções precisas e assertivas
+   - Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade. 
+
+
+::::::::::::::::::: v7 - 24/10/2025 ::::::::::::::::::
+
+------------- Prompt ajustado para todos as 5 tools  ----------------------------------------------------------
+
+Analise o prompt enviado de atendimento n8n node AI de nome "AgentIndex" responsável por estabelecer o crédito de interesse do cliente e redirecionar para tool especifica.
+
+Após analise, faça:
+   - Ajuste o prompt para que após redirecionado para tool de crédito especialista escolhida pelo cliente vá até as etapas finais ou até o cliente escolher outro crédito - só assim redirecione para a tool de credito especialista
+   - Elimine as ambiguidades no redirecionamento da tool de crédito especialista.
+   - Garanta que prompt mantenha o cliente na tool de crédito especialista até a conclusão ou até o cliente escolher outro crédito.
+   - Mantenha as instruções que achar melhor e conveniente para o novo contexto.
+   - Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
+
+
 ::::::::::::::::::: v5 - 14/10/2025 ::::::::::::::::::
 
 ------------- Prompt entrada no INSS, Portabilidade e Refinanciamento -----------------------------------------
