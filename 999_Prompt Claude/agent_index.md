@@ -16,6 +16,23 @@ Adicione as instruções no prompt "AgentIndex" no caso de encontrar os dados do
    - Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade. 
 
 
+
+------------ New Think Tool Description - version 4
+
+Analise Think Tool Description do n8n atual informada abaixo:
+
+Após a analise do Think Tool Description do n8n atual, crie uma nova descrição para o Think Tool Description do n8n para o "AgentIndex" nesse novo contexto para que aja uma reflexão antes das repostas: 
+ - Para que aumente a assertividade da IA.
+ - Não confunda as tools credit (credit_clt/fgts/inss/servpublic/bolsafamilia) após a escolha do cliente
+ - Evite alucinações
+ - Não invente nada fora do contexto
+ - Não invente valores/condições/prazos?
+ - Não invente informações sobre produtos/valores 
+ - Siga corretamente todas as etapas e não sai do contexto que foi designada
+ - O objetivo dessas instruções da tool Think Tool Description do n8n é assertividade, precisão, eficiência e qualidade, Foque nisso.
+ - Mantenha sempre o custo/benefício na relação uso de tokens e eficiência no atendimento 
+
+
 ::::::::::::::::::: v7 - 24/10/2025 ::::::::::::::::::
 
 ------------- Prompt ajustado para todos as 5 tools  ----------------------------------------------------------
@@ -48,10 +65,6 @@ Após analise, faça:
    - adicione mais uma tool credit_inss que será acionada para finalização após escolha do cliente
    - na tag communication reforçar o uso 1ª pessoa (eu/nós) e evitar uso 3ª pessoa (a empresa/o sistema/eles)
    - Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
-
-
-
-
 
 
 ::::::::::::::::::: v4 - 10/10/2025 ::::::::::::::::::
