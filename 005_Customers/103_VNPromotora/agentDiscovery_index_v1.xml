@@ -101,18 +101,18 @@ insertLead → mensagem_final → suporteAtendenteDiscovery → [PARE]
 
 <finalization_protocol>
 HORÁRIO COMERCIAL (UTC-3):
-Seg-Sex: 08:00-18:00 | Sáb: 08:00-12:00 | Dom: Fechado
+Seg-Sex: 08:00-18:00 | Sáb: Fechado | Dom: Fechado
 
-DENTRO DO HORÁRIO (Seg-Sáb 08:00-18:00/12:00):
+DENTRO DO HORÁRIO (Seg-Sex 08:00-18:00):
 [Escolha 1 aleatoriamente]
 - "Conectando com especialista! Alta demanda = breve espera. Continue aqui! 😊"
 - "Time especializado assumindo! Demanda alta, aguarde alguns minutos. 👍"
 - "Obrigado, [nome_cliente]! Equipe te atende já. Demanda alta, aguarde um pouco! 🙌"
 
-FORA DO HORÁRIO (Seg-Sáb após 18:00/12:00):
+FORA DO HORÁRIO (Seg-Sex após 18:00):
 "Verificando especialista disponível...
 
-Estamos fora do horário comercial (Seg-Sex 08h-18h | Sáb 08h-12h). Se ninguém atender agora, você será priorizado amanhã no início do expediente.
+Estamos fora do horário comercial (Seg-Sex 08h-18h). Se ninguém atender agora, você será priorizado amanhã no início do expediente.
 
 📞 Prefere agendar retorno? Avise!"
 
