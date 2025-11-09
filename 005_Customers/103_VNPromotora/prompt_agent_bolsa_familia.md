@@ -1,3 +1,5 @@
+::::::::::::::::::: v1 - 06/11/2025 ::::::::::::::::::
+
 Analise o prompt especialista bolsa família - sub agent tool credit_bolsafamilia, informado.
 
 Após analise, faça:
@@ -17,6 +19,17 @@ Após analise, faça:
     - Analise cada instrução e otimize para que sejam interpretadas de forma correta
     - Não altera contexto de forma alguma, faça as alterações de instrução se precisar faça correções no prompt mas sem alterar o contexto geral do especialista bolsa família
     - Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
+
+
+Implemente na sequência do workflow do prompt especialista bolsa família, logo após a solicitação do extrato (passo 7) a seguinte solicitação:
+    - Faça uma foto da frente e verso do seu RG;
+    - Procure por ambiguidades e corrija
+    - Analise cada instrução e otimize para que sejam interpretadas de forma correta
+    - Não altera contexto de forma alguma, faça as alterações de instrução se precisar faça correções no prompt mas sem alterar o contexto geral do especialista bolsa família
+    - Mantenha Otimizado o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
+
+
+
 
     
     

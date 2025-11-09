@@ -1,3 +1,5 @@
+::::::::::::::::::: v1 - 06/11/2025 ::::::::::::::::::
+
 Analise o prompt Agent Discovery - IA de atendimento inicial da automação n8n, abaixo:
 
 Após analise, faça:
