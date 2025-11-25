@@ -416,7 +416,21 @@ Faça:
 - Formato de saída em tag xml.
 - Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
 
-:::::::::::::::::::::::::::::::::::: Sub Agent CLT 06/10/2025 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::: Sub Agent CLT  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+----------------- v4 - adicionando se o cliente possui contrato ativo - com insert na planilha 13/11/2025 ---------
+
+Analise o prompt Sub-agente Crédito Consignado CLT, abaixo:
+
+Após analise, faça:
+    - Adicionar mais um passo no workflow perguntando se o cliente possui contratos ativos CLT, ou seja, se o cliente já possui empréstimos CLT. Apenas pergunte se possui, não precisa informar quantos.
+    - Acione insertCLT no campo CONTRATOS ATIVOS
+    - Não perguntar qual o salário do cliente
+    - Não perguntar o nome da empresa
+    - Mantenha as outras instruções
+    - Procure por ambiguidades e corrija
+    - Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade. 
+
 
 ----------------- v3 - modificação seguindo a estrutura credit_inss 14/10/2025 ---------
 
@@ -450,7 +464,7 @@ Após analise faça:
     - Otimize ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade
 
 
------------------ v1 first prompt --------------------
+----------------- v1 first prompt 06/10/2025 --------------------
 
 Analise o prompt sub agent AI tool credit_clt (Sub-agente Crédito Consignado CLT). 
 O prompt sub agent AI do prompt principal persona Amanda.

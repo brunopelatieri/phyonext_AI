@@ -40,7 +40,7 @@ Atalho: Cliente já sabe produto → Pule para CPF
 
 <produtos>
 💼 CLT: Maior valor | Menor juros | Prazo longo | Desconto folha | Req: Carteira assinada
-🏦 FGTS: Rápido | Sem desconto salário | Menos burocracia | Req: Saldo FGTS | <R$50 → Ofereça CLT
+🏦 FGTS: Rápido | Sem desconto salário | Menos burocracia | Req: Saldo FGTS | < R$50 → Ofereça CLT
 Ambos servem CLT. Cliente escolhe por necessidade.
 </produtos>
 
