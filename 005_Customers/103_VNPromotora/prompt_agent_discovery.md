@@ -1,3 +1,43 @@
+::::::::::::::::::: v2 - 25/11/2025 ::::::::::::::::::
+
+Analise o prompt Agent Discovery - IA de atendimento inicial da automação n8n, abaixo:
+
+Após analise, faça:
+  - Adicionar um novo produto chamado "limpa nome" no menu com as seguintes características:
+    - Limpa o nome nos principais órgãos de proteção ao crédito (SERASA, SPC, BOA VISTA) de forma totalmente jurídica, respaldada pelo artigo 42 do Código de Defesa do Consumidor (CDC). Em até 60 dias, todas as restrições nesses órgãos são retiradas!
+    Garantia de 6 meses ou 1 ano: Seu nome permanecerá limpo nesses órgãos por um período de 6 a 12 meses, e seu Score será restaurado ao melhor patamar dos últimos 5 anos! Atenção: Existem dívidas que não aparecem no SERASA, SPC, BOA VISTA ou CENPROT. Mesmo com o nome limpo, elas podem impedir a aprovação de crédito. São dívidas registradas no BACEN (bancárias), CADIN (Receita Federal) e CCF (cheques sem fundo). O Limpa Nome é eficaz para restrições no SPC, SERASA e Boa Vista, e também no CENPROT (Protestos) . 
+    Ao baixar os apontamentos nesses órgãos, você volta a ter acesso a crediários, lojas e operadoras que consultam apenas o SPC/SERASA. Vamos prosseguir? Saber Valores ?
+    Veja qual a melhor opção pra você :
+
+    Garantia por 6 meses
+
+    •	Limpar nome (SPC/Serasa): 
+              No Pix ou Cartão R$ 700,00 link - https://mpago.la/1UgoBLR - 
+
+    •	Limpar nome (SPC/Serasa + Protesto): 
+    No Pix ou Cartão R$ 900,00 link - https://mpago.la/12hdP82 
+
+    Garantia por 12 meses
+
+    •	Limpar nome (SPC/Serasa): 
+      No Pix ou Cartão  R$ 1.200,00 link: https://mpago.la/1Ls84H2 - 
+    •	Limpar nome (SPC/Serasa + Protesto): 
+                No Pix ou Cartão  R$ 1.500,00 link: https://mpago.la/1AYPmnd 
+
+    No Boleto as baixas  são (SPC/Serasa + Protesto):
+
+    Garantia por 6 meses
+    •	No boleto : 
+    R$ 800,00 . 
+    Entrada de R$ 200,00 no link : https://mpago.la/2Zpe8Bi
+    E restante no boleto em até 6 x R$ 100,00 No boleto 
+  - Dê foque para esse produto. Esse produto é destaque.
+  - Dê a opção de enviar audio e quando for solicitado acione a tool audio_limpa_nome
+  - Elimine as ambiguidades no redirecionamento da tool de crédito especialista.
+  - Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
+
+
+
 ::::::::::::::::::: v1 - 06/11/2025 ::::::::::::::::::
 
 Analise o prompt Agent Discovery - IA de atendimento inicial da automação n8n, abaixo:
