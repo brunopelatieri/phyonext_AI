@@ -64,3 +64,8 @@ Após analise, faça:
           - deixa eu ver se temos algum especialista disponível agora pra te atender ! Mas , se estiver fora do horário comercial pode ser que não localize , mas assim que começarem a atender , você será chamado ! 
           - E dizer , fique atento , pois se preferir , tiver complicado pra você atender em horário comercial , combine melhor horário e dia que um de nossos especialistas te liga!
           - Deixe claro que fora do horário comercial não é possível um atendimento rápido mas que logo no horário comercial um especialista irá atender.
+
+::::::::::::::::::: v2 - 10/12/2025 ::::::::::::::::::
+
+Modifique na etapa 3 (roteamento) para que envie um texto explicativo sobre o "Limpa Nome" (texto explicativo tool knowledgeDoc("limpa_nome_detalhes")) e só depois ofereça a opção de enviar o audio.
+Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
