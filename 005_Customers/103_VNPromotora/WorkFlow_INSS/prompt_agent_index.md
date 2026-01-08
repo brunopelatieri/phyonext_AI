@@ -1,0 +1,103 @@
+::::::::::::::::::: v1 - 07/01/2025 ::::::::::::::::::
+
+Ajustar Think Tool para refletir essa nova lógica (versão ultra-min atualizada)
+
+-------------------------------------------------------------------
+
+Ajuste no AgentIndex:
+     - Não é necessário validar os documentos enviados
+     - A perceber que houve envio não insista e não valide os documentos enviados, continue o fluxo
+     - Só peça uma confirmação que os documentos foram enviados e prossiga 
+     - Apenas confirme uma vez nome e cpf quando extremamente necessária
+     - Nunca fique pedindo confirmação de nome e cpf
+
+
+----------------------------------------------------------------------
+
+Crie um Think Tool Description para node Think tool para auxiliar no raciocínio e lógica.
+Criar uma versão ultra-enxuta (token-min)
+
+------------------------------------------------------------------------
+
+Ajustar mensagem de confirmação final para maximizar taxa de resposta ao humano.
+Procure por ambiguidades e corrija
+Analise cada instrução e otimize para que sejam interpretadas de forma correta
+Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade
+
+------------------------------------------------------------------------
+
+Faça os seguintes ajustes:
+    - Trocar "RG, CPF ou CNH" por "RG (Frente e Verso) ou CNH"
+    - Trocar "Extrato de empréstimos do INSS" por "Extrato de Consignações do INSS"
+    - Adicionar o PASSO 3: DESBLOQUEIO MEU INSS (Antes do PASSO FINAL: TRANSFERÊNCIA):
+        "Você receberá o link de confirmação em até 1 dia útil.
+        **Atenção:** Seu benefício deve estar desbloqueado no INSS para receber o pagamento. O sistema bloqueia automaticamente após a virada de folha (prevista para 19/01/2026).
+        Você sabe desbloquear pelo app Meu INSS ou site www.meu.inss.gov.br?
+        Responda: **Sim** ou **Não**"
+
+        - Apenas registre a resposta.
+        - NÃO ofereça ajuda.
+        - Cliente não sabe desbloquear: Não orientar e não ajudar (atendimento suporte humano auxiliará)
+
+
+-----------------------------------------------------------------------
+
+O objetivo e meta é ter o cliente qualificado que envia o nome, cpf e as 4 imagens de documentos e enviar para o atendimento suporte humano tool suporteAtendente.
+Podemos ter casos que o cliente não queira enviar os documentos mas que também é valido enviar para o atendimento suporte humano tool suporteAtendente.
+Mas nome e cpf é obrigatório e necessário.
+
+-----------------------------------------------------------------------
+
+Após o obter o nome e cpf, no workflow passo 1, adicione:
+
+    "Senhor(a) [NOME Informado - procure na memória - se não encontrar não fale nome], vou te ajudar a garantir seu crédito com o aumento salarial de 2026! 
+
+    Para que você tenha uma ideia: clientes que ainda não realizaram antecipação salarial em nenhuma instituição e recebem um salário mínimo conseguem, em média, R$ 1.500 em crédito consignado.
+
+    Se você recebe acima de um salário mínimo, o valor disponível será ainda maior. Vamos calcular exatamente quanto você pode obter junto ao banco.
+
+    Além disso, analisamos todas as suas oportunidades de crédito, então esse valor pode ser superior ao estimado inicialmente.
+
+    Para confirmar o valor exato que posso liberar para você, preciso de algumas informações importantes. Posso solicitá-las agora?"
+
+Se sim, no passo 2, solicite os documentos:
+
+    "Perfeito! 👏
+    Vamos dar sequência à sua simulação de crédito.
+
+    Para iniciar, preciso que envie as fotos dos seguintes documentos:
+    📎  RG, CPF ou CNH
+    🏠 Comprovante de endereço
+    📄 Extrato de empréstimos do INSS
+    🤳 Foto segurando o RG ou CNH ao lado do rosto (para confirmação de identidade)"
+
+    - Caso aja alguma objeção de enviar documentos por desconfiança de golpe, informe:
+        "Entendo sua preocupação, [NOME Informado - procure na memória - se não encontrar não fale nome]. Vou solicitar que nosso gerente entre em contato para esclarecer todas as suas dúvidas e fornecer nossos dados institucionais.
+        A VN Promotora atua há mais de 15 anos no mercado com total transparência e credibilidade, contando com mais de 2 lojas físicas.
+        Aguarde o contato do nosso gerente em breve. Obrigado!"
+    - Acione a tool suporteAtendente para solicitar suporte humano. Envie o contexto e salve os dados na tool insertINSS
+
+Ajustes os outros passos.
+Procure por ambiguidades e corrija
+
+
+---------------------------------------------------------------
+
+
+Analise o prompt especialista INSS - sub agent tool credit_inss abaixo:
+
+Após analise, faça:
+- Coloque todo processo no AgentIndex de forma que todo o processo de atendimento de venda PRÉ-CONTRATO INSS 2026 - Garantir meu crédito com aumento salarial de 2026 acontece o AgentIndex sem precisar do sub agent tool credit_inss.
+- Procure por ambiguidades e corrija
+- Analise cada instrução e otimize para que sejam interpretadas de forma correta
+- Não altera contexto de forma alguma, faça as alterações de instrução se precisar faça correções no prompt mas sem alterar o contexto geral
+- Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
+
+---------------------------------------------------------------
+
+Analise o AgentIndex:
+Após o analise refaça o prompt focado em apenas um produto: PRÉ-CONTRATO INSS 2026
+Mantenha as outras diretrizes.
+Apenas foque o atendimento o produto PRÉ-CONTRATO INSS 2026
+Retire o menu e os produtos de outras opções.
+
