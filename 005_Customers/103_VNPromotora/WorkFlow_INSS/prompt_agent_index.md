@@ -1,3 +1,24 @@
+::::::::::::::::::: v4 - 13/01/2025 ::::::::::::::::::
+
+Criar a versão ULTRA-MIN mas sem sacrificar a qualidade e eficiência para ser interpretado pelo modelo gtp-5-mini
+
+------------------------------------------------------------------
+
+Crie uma Think Tool Description para node Think Tool do node AI Agent especifico para o PROMPT OTIMIZADO — AgentIndex | VN Promotora | INSS 2026
+
+------------------------------------------------------------------
+
+Após analise, faça:
+    - Analise cada instrução e otimize para que sejam interpretadas de forma correta para o modelo gpt-5-mini
+    - Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade
+    - Nunca altere o contexto.
+    - Nunca altere nenhuma mensagem.
+    - Nunca altere os passos do workflow
+    - Nunca altere as regras de memoria
+    - Faças as adaptações necessária mas sem alterar as condições acima
+
+
+
 ::::::::::::::::::: v1 - 07/01/2025 ::::::::::::::::::
 
 Ajustar Think Tool para refletir essa nova lógica (versão ultra-min atualizada)
