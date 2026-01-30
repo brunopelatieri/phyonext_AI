@@ -1,3 +1,47 @@
+::::::::::::::::::: v7 - 29/01/2025 ::::::::::::::::::
+
+Garanta que o prompt envie a "Mensagem final conforme horário:" antes de acionar a tool suporteAtendente. Pois quando acionada a tool suporteAtendente bloqueia o atendimento.
+
+------------------------------------------------------------------
+
+Analise novamente o prompt da VNPromotora abaixo (entre aspas):
+Após analise, faça:
+     - retire os 5 segundos antes de acionar o suporteAtendente - reforça a obrigatoriedade do acionamento no final do workflow e quando solicitado suporte.
+     - reforçar o uso da tool n8n "tagChatwoot" no workflow
+     - Manter otimizado e com interpretação correta para o modelo gpt-5-mini 
+
+::::::::::::::::::: v6 - 28/01/2025 ::::::::::::::::::
+
+Ajustar a Think Tool ULTRA-MIN para refletir o novo nome do produto
+
+--------------------------------------------------------------------
+
+Fiz uma pequena modificação:
+    - Substitui: "PRÉ-CONTRATO DO CONSIGNADO INSS 2026" por "CRÉDITO CONSIGNADO INSS" - já que o foco não é mais o pré-contrato.
+    - Inseri como regra: "Aguardar 5 segundos antes de acionar suporteAtendente".
+Apenas valide se as minhas modificações estão corretas e coesas com a otimização e eficiência do prompt.
+Faças as adaptações necessária para garantir otimização e coesão de interpretação para o modelo gpt-5-mini.
+
+--------------------------------------------------------------------
+
+Após a analise adicione a tool "tagChatwoot".
+A tool n8n "tagChatwoot" será responsável em adicionar as tags nos contatos atendidos nas seguintes tags:
+    - qualificados: enviou nome, cpf, os documentos e desbloqueio do INSS (site app) - completou com sucesso o workflow;
+    - não_enviou_documentos: não enviou ou recusou enviar os documentos;
+    - não_desbloqueou_inss: informou que não desbloqueou ou não sabe fazer;
+    - solicitou_suporte: foi enviado pelo suporte (acionou a tool "suporteAtendente");
+    - não_interessou_desistiu: não demonstrou interesse ou desistiu;
+Pode categorizar de uma até 3 tags cada contato.
+Executar a analise para categorizar as tags a cada passo do worflow.
+Enviar sempre no formato JSON correto para tool "tagChatwoot". Formato JSON correto: {"labels":["NOME_TAG_1","NOME_TAG_2"]}.
+Nunca altere o contexto.
+Nunca altere nenhuma mensagem.
+Nunca altere os passos do workflow.
+Nunca altere as regras de memoria.
+Analise cada instrução e otimize para que sejam interpretadas de forma correta para o modelo gpt-5-mini.
+Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
+
+
 ::::::::::::::::::: v4 - 13/01/2025 ::::::::::::::::::
 
 Criar a versão ULTRA-MIN mas sem sacrificar a qualidade e eficiência para ser interpretado pelo modelo gtp-5-mini
