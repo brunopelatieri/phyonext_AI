@@ -32,7 +32,7 @@ A tool n8n "tagChatwoot" será responsável em adicionar as tags nos contatos at
     - solicitou_suporte: foi enviado pelo suporte (acionou a tool "suporteAtendente");
     - não_interessou_desistiu: não demonstrou interesse ou desistiu;
 Pode categorizar de uma até 3 tags cada contato.
-Executar a analise para categorizar as tags a cada passo do worflow.
+Executar a analise para categorizar as tags a cada passo do workflow.
 Enviar sempre no formato JSON correto para tool "tagChatwoot". Formato JSON correto: {"labels":["NOME_TAG_1","NOME_TAG_2"]}.
 Nunca altere o contexto.
 Nunca altere nenhuma mensagem.
