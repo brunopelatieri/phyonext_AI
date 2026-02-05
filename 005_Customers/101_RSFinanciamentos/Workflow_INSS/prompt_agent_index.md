@@ -1,3 +1,15 @@
+::::::::::::::::::: v4 - 04/02/2026 ::::::::::::::::::
+
+Continuando com modificações no prompt AgentIndex | RS Financiamentos | Crédito Consignado INSS, faça:
+Adicione no workflow após a solicitação do nome um passo de checagem para ver se o cliente é beneficiário LOAS.
+Beneficiários LOAS/BPC não estão aptos a empréstimos.
+Crie um pergunta, com tom empático.
+Caso a resposta seja sim informe o alerta:
+"⚠️ LOAS/BPC: Empréstimos não disponíveis por restrição governamental. Sentimos muito."
+Acione a tool "tagChatwoot" e classifique com a tag: "loas_bpc"
+Finalize o atendimento.
+
+
 ::::::::::::::::::: v3 - 29/01/2026 ::::::::::::::::::
 
 Analise o prompt do cliente RSFinanciamento modificado por mim, abaixo (entre aspas):
