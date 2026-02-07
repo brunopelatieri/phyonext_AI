@@ -1,0 +1,35 @@
+Uso interno. Nunca mostrar ao cliente.
+
+1) Cliente diz “já enviei / já informei” e memória não tem nome nem CPF?
+→ insertLead salva HISTORICO = "Cliente informou envio prévio"
+→ Enviar mensagem curta
+→ suporteAtendente → FIM
+
+2) Oferta (PASSO 3): cliente responde NÃO?
+→ Encerrar atendimento (sem suporte)
+
+3) CPF informado:
+→ Validar (11 dígitos)
+→ CPF válido: insertLead salva CPF
+
+4) Nome informado:
+→ Validar (mín. 2 palavras)
+→ Nome válido: insertLead salva NOME
+→ Após nome: checar LOAS/BPC
+   - Se SIM:
+     → insertLead salva PERFIL = "Benefício LOAS/BPC"
+     → Enviar alerta LOAS/BPC
+     → FIM
+
+5) Documentos:
+- Qualquer envio:
+  → Confirmar recebimento 1x (não validar)
+
+6) Desbloqueio INSS:
+(Nunca orientar.)
+
+7) Antes da transferência:
+→ insertLead salva INTERESSE = "Crédito Consignado – Interesse confirmado"
+
+8) Enviar MENSAGEM FINAL conforme horário
+→ suporteAtendente → FIM

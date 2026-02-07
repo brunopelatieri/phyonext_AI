@@ -1,3 +1,26 @@
+
+::::::::::::::::::: v5 - 04/02/2026 ::::::::::::::::::
+
+No prompt AgentIndex | RS Financiamentos | Crédito Consignado INSS retire todo o processo de adicionar tag no workflow e a referente tool tagChatwoot.
+Não teremos mais a funcionalidade de tag para o prompt.
+Faça as alterações de remoção do processo de tags, mas atenção aos itens abaixo:
+  - Nunca altere o contexto.
+  - Nunca altere nenhuma mensagem.
+  - Nunca altere os passos do workflow.
+  - Nunca altere as regras de memoria.
+  - Analise cada instrução e otimize para que sejam interpretadas de forma correta para o modelo gpt-5-mini.
+  - Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
+
+-----------------------------------------------------------
+
+Reforçar e garantir que os dados informados sejam inseridos na planilha acionando a tool insertLead.
+
+----------------------------------------------------------
+
+Atualizar a Think Tool ULTRA-MIN relativo as mudanças:
+  - processo sem tags
+  - checkpoints de gravação acionamento tool insertLead
+
 ::::::::::::::::::: v4 - 04/02/2026 ::::::::::::::::::
 
 Continuando com modificações no prompt AgentIndex | RS Financiamentos | Crédito Consignado INSS, faça:
