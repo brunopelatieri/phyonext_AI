@@ -1,3 +1,11 @@
+::::::::::::::::::: v8 - 14/02/2025 ::::::::::::::::::
+Analise novamente o prompt da VNPromotora abaixo (entre aspas):
+Após analise, faça:
+     - retire PASSO 3: SOLICITAÇÃO DE DOCUMENTOS do workflow
+     - faça os ajustes necessários apara ficar coeso após retirar o passo 3 do workflow
+     - Manter otimizado e com interpretação correta para o modelo gpt-5-mini
+
+
 ::::::::::::::::::: v7 - 29/01/2025 ::::::::::::::::::
 
 Garanta que o prompt envie a "Mensagem final conforme horário:" antes de acionar a tool suporteAtendente. Pois quando acionada a tool suporteAtendente bloqueia o atendimento.
