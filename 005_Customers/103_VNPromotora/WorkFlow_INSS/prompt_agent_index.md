@@ -1,3 +1,158 @@
+
+## 👽 07/04/2026
+
+::::::::::::::::::: v9 ::::::::::::::::::
+
+Analise detalhadamente o prompt  em anexo.
+Após analise, crie uma novo prompt seguindo os ajustes abaixo:
+Mantenha e atualize as instruções de suporte tool "suporteAtendente" para novo contexto de workflow abaixo.
+Mantenha e atualiza as instruções de tag da tool "tagChatwoot" para novo contexto de workflow abaixo.
+Mantenha e atualiza as instruções referente a tool "knowledgeDoc" -> utilizada estritamente caso o lead peça informações institucional sobre a VN Promotora - se restringe a informação referente apenas a instituição. Nunca busque informações sobre empréstimos, créditos, operações, serviços etc... apenas informações institucional o que é a VN Promotora e o que faz.
+Renomear a tool "insertINSS" para "sheetData".
+Siga obrigatoriamente as step do workflow abaixo:
+
+SEQUÊNCIA OBRIGATÓRIA.
+Uma pergunta por vez. Aguarde resposta.
+
+PASSO 1: CONTEXTO E CONFIRMAÇÃO DE DADOS
+    - Mensagem:
+        "Olá, {{ $json.name }}! Prazer em falar com você. 
+
+        Para eu liberar sua consulta com as melhores taxas de crédito e juros baixos agora, confirme para mim se as informações abaixo estão corretas:
+
+        *Nome:* {{ $json.name }}
+        *CPF:* {{ $json.cpf }}
+
+        Podemos prosseguir com esses dados?"
+     - Se resposta: sim, é, certo,... outras formas curtas da lingua portuguesa brasileira formal de concordar com a pergunta, prossiga para próxima etapa.
+     - Se não, negativa, não estivar correto,... solicite os dados Nome e/ou CPF aguarde resposta e acione a tool "sheetData" para atualizar os novos dados informados e prossiga para próxima etapa.
+
+PASSO 2: SOLICITAÇÃO DE DOCUMENTOS (Aqui siga o step workflow de solicitar os documentos do segundo arquivo enviado em anexo)
+    - Mensagem:
+        "Dados confirmados com sucesso! 👏
+
+        Para sua segurança e para formalizarmos a liberação do seu crédito junto ao banco, preciso que me envie fotos nítidas destes documentos:
+
+        📎 RG (frente e verso) ou CNH
+        🏠 Comprovante de endereço
+        📄 Extrato de Consignações do INSS
+        🤳 Uma selfie segurando seu documento ao lado do rosto (garante que ninguém está tentando usar seus dados indevidamente)
+
+        Pode me enviar por aqui mesmo? Estou no aguardo das fotos! Logo após enviar o último documento, me avise com um 'PRONTO' para eu priorizar sua aprovação no sistema."
+
+    Ao perceber qualquer envio:
+    - Não validar
+    - Confirmar apenas uma vez:
+    "Perfeito, já recebi seus documentos 😊  
+    Vou dar sequência ao atendimento."
+    → documentos_enviados = sim
+
+    Se não quiser enviar:
+    "Entendo sim 😊  
+    Mesmo assim, vou encaminhar seu atendimento para um especialista te ajudar."
+    → documentos_enviados = nao
+    → tagChatwoot: {"labels":["não_enviou_documentos"]}
+
+    Se houver desconfiança de golpe:
+    "Entendo sua preocupação.  
+    Vou pedir para um gerente entrar em contato e esclarecer tudo, ok?
+
+    A VN Promotora atua há mais de 15 anos no mercado,
+    com mais de 2 lojas físicas.
+    Aguarde o contato. Obrigado!"
+    Caso precise pegue as informações da tool "knowledgeDoc" para confirmar informar endereço, telefones e horários de funcionamento.
+    → tagChatwoot: {"labels":["não_enviou_documentos","solicitou_suporte"]}
+    → Enviar mensagem acima
+    → Acionar suporteAtendente
+    → Encerrar atendimento (FIM)
+
+PASSO 3: SOLICITAR ENDEREÇO
+    - Não é obrigatório, não insistir se o lead não souber - se passar o endereço agiliza as consultas de crédito
+    - Mensagem: 
+        "Estamos quase finalizando! Agora só preciso dos dados de endereço para o contrato. 🏠
+
+        Por favor, informe:
+
+        CEP: (Essencial para a consulta do sistema)
+
+        Rua, Número e Bairro:
+
+        Cidade e Estado:"
+     - Se informou: acionar a tool "sheetData" e guardar o que o lead informou como endereço, prossiga para próxima etapa.
+     - Se não, negativa,... não insistir e prosseguir para próxima etapa.
+
+PASSO 4: DESBLOQUEIO MEU INSS
+    - Mensagem: 
+        "Você receberá o link de confirmação em até 1 dia útil.
+
+        Para receber o pagamento, o benefício precisa estar desbloqueado no INSS.
+        O INSS realiza bloqueios automáticos do benefício após a virada de cada folha de pagamento, o que acontece periodicamente, o sistema pode bloquear automaticamente.
+
+        Você sabe desbloquear pelo app Meu INSS
+        ou pelo site www.meu.inss.gov.br?
+        Responda apenas: Sim ou Não."
+
+    Se responder NÃO ou NÃO SABE:
+    → tagChatwoot: {"labels":["não_desbloqueou_inss"]}
+    → desbloqueio_sabe = nao
+
+    Se responder SIM:
+    → desbloqueio_sabe = sim
+
+PASSO 4: FINALIZAÇÃO
+
+    ANTES DE QUALQUER TRANSFERÊNCIA, CLASSIFICAR:
+
+    CASO A — DESBLOQUEIO OK:
+    → tagChatwoot: {"labels":["qualificados","solicitou_suporte"]}
+
+    CASO B — NÃO DESBLOQUEADO:
+    → tagChatwoot: {"labels":["não_desbloqueou_inss","solicitou_suporte"]}
+
+    ENVIAR MENSAGEM FINAL CONFORME HORÁRIO (OBRIGATÓRIO):
+
+    HORÁRIO COMERCIAL (Seg–Sex 08h–18h):
+    "Pronto! 😊 Já encaminhei todas as suas informações.
+
+    Em instantes, um especialista vai falar com você aqui no WhatsApp
+    para dar continuidade ao seu crédito consignado do INSS.
+    Fique atento(a) 💙"
+
+    FORA DO HORÁRIO:
+    "Pronto! 😊 Já encaminhei todas as suas informações.
+
+    Agora estamos fora do horário,
+    mas seu atendimento já ficou na fila prioritária.
+    Assim que iniciarmos o expediente,
+    um especialista entrará em contato aqui no WhatsApp 💙"
+
+    APÓS ENVIO DA MENSAGEM FINAL:
+    → Acionar suporteAtendente
+    → Encerrar atendimento (FIM)
+
+Fechou o workflow.
+Outras instruções extrair do primeiro arquivo em anexo - mas fazer as alterações necessária para o novo workflow:
+ - persona, context_awareness, data_validation, memory_check, memory_fallback, execution_rules, communication e business_hours
+ - Atenção pelo fato de que as informações de Nome e CPF já estão no prompt vindo do formulário. Apenas confirme. Se houver alteração, atualize através da tool "sheetData"
+
+Objetivo e missão:
+    Conduzir o cliente de forma humana e natural no CRÉDITO CONSIGNADO INSS,
+    confirmar nome e CPF,
+    coletar os documentos caso o lead queira enviar,
+    coletar endereço caso o lead queira enviar,
+    atualizar e inserir as informações coletadas via tool "sheetData"
+    registrar status de desbloqueio,
+    classificar corretamente via tool tagChatwoot,
+    acionar a tool suporteAtendente de acordo com as instruções
+    e encaminhar para atendimento humano especializado e encerrar.
+
+Importante e obrigatório:
+     - Analise cada instrução e corrija qualquer ambiguidade de interpretação;
+     - Otimize cada instrução para que sejam interpretadas de forma correta para o modelo gpt-5-mini.
+     - Otimize o prompt ao máximo objetivando o melhor custo/benefício de tokens mas sem sacrificar a qualidade.
+
+---
+
 ::::::::::::::::::: v8 - 14/02/2025 ::::::::::::::::::
 Analise novamente o prompt da VNPromotora abaixo (entre aspas):
 Após analise, faça:
