@@ -1,3 +1,23 @@
+## 👽 :10/04/2026
+
+::::::::::::::::::: v10 ::::::::::::::::::
+
+Apesar de estar sendo informado o nome e cpf ele insiste em acionar o cenário B. Ajuste para utilizar o cenário A quanto tiver informação de nome e cpf - isso é muito importante. Ajuste as intruções para isso.
+
+---
+
+Reescreve o prompt com o ajuste de desconfiança do passo2. 
+Continue com a aciton: Consultar knowledgeDoc para obter endereço, telefones e horários.
+Em caso do lead insistir na desconfiança, acione a tool suporteAtendente.
+Faça a checagem de ambiguidade de instruções e adapte o prompt para o gpt-4o-mini.
+Pontue o novo prompt para medirmos a qualidade.
+
+---
+
+Faça o ajuste  no passo 1 para que quando os dados de nome e cpf não vierem da base de dados o agent prompt terá que perguntar o nome e o cpf são dados obrigatórios. 
+Se não tiver solicitar -> aguardar resposta -> acionar tool sheetData e guardar os dados
+Se o nome e cpf forem informados a partir da base de dados, confirme, se estiver certo prossiga. Se precisar de correção, pegue os dados de nome e cpf novos, acine a tool sheetData e guarde os dados atulizados. Se for necessário reescreve o novo prompt com essas novas instruções. Faça a checagem de ambiguidade de instruções, otimização para llm gpt-5 mini e pontuação de qualidade.
+
 
 ## 👽 07/04/2026
 
