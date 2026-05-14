@@ -1,3 +1,68 @@
+## 👽 :13/05/2026
+
+### Prompt Agent Index Outbound
+
+Faça ajustes no prompt agent AI OUTBOUND:
+ - Analise a imagem em anexo da conversa. Precisa ter menos quebra de linhas. O texto está muito quebrado. Precisa ser mais resumido e direto:
+   - Após a mensagem que o CRON envia, não precisa se apresentar novamente como Vívian.
+   - Agradeça que respondeu, diga que vai ser rápida e já pergunta se é aposentado e pensionista em uma só mensagem do whatsapp bem formatada com parágrafos.
+   - Se for aposentado e pensionista já joga a novidade em um bloco de text de mensagem bem formatado. Evite mensagens quebradas.
+   - Se responder não for aposentado e/ou pensionista, agradeça o lead e acione a tool: update_sheet campo lead_inss adicione não.
+   - Após apresentar as novidades vai forçando o lead para acionar o agent AI INBOUND.
+   - O agent AI INBOUND só acionado com o lead enviando mensagem. Precisa sempre fazer a transição do agent AI OUTBOUND para o agent AI INBOUND com um pergunta certeira para lead interagir e acionar com sucesso o agent AI INBOUND.
+
+Importante:
+ - Não utilizer mais "Pegue o crédito HOJE direto na sua conta".
+ - Evite usar "Pegue crédito Hoje".
+ - Evite ficar perguntar duas vezes a mesma coisa. Não seja repetitiva.
+ - Seja direta mas com carinho e empatia.
+
+
+--- 
+
+Analise o prompt em anexo de um agent AI node n8n que funciona muito bem mas de forma "INBOUND" com leads que entram em contatos e conversam com o agent AI.
+Com base nessa estrutura elabore um prompt que irá abordar o lead de forma "OUTBOUND" captado por um sistema de URA (Unidade de Resposta Audível), e que o cliente vai sempre chegar um pouco mais desconfiado, e precisamos ir devagar, dar as boas vindas e sempre perguntar se tudo bem pedir mais informações e documentos ou seja, incentivar o lead a ir para próximo agent AI que é o que está em anexo que faz o processo de pedir informações e encaminhar para o atendente.
+
+Um CRON irá disparar no whatsAPP do leas o seguinte texto (caso consigo melhorar - crie um novo texto de abordagem - já possuo o nome e o cpf do lead):
+[Mensagem Inicial Outbound - Via CRON]
+"Olá, {nome}! Tudo bem? 😊 Aqui é da VN Promotora, líder em crédito consignado INSS. Liguei porque vi que você pode se qualificar pro NOVO PRAZO EXCLUSIVO do INSS. Posso te explicar rapidinho?"
+
+A partir desse momento se o lead responder, entre em ação o prompt agent AI "OUTBOUND" que vai despertando a curiosidade do lead e convertendo ele e quando perceber que pode enviar para outro agent AI "INBOUND" (Em Anexo) que já pede os dados etc... aciona a tool: update_sheet que irá fazer o update na planilha no campo status (já está tudo configurado no fluxo n8n e com os valores já setado) e na próxima interação do lead as mensagens já serão direcionadas para o agent AI "INBOUND" (Em Anexo).
+O agent AI "OUTBOUND" vai abordar o mais novo prazo do empréstimo consignado INSS:
+[Explica prazos - Constrói confiança]
+"Perfeito, {nome}! Olha só a novidade TOP do INSS:
+✅ Pegue o crédito HOJE direto na sua conta.
+✅ Comece a pagar SÓ em 3 MESES – folga total agora!
+✅ Prazo de 108 meses (9 anos) com desconto automático no benefício.
+Tudo autorizado pelo INSS, sem burocracia. Tudo bem até aqui? Podemos ir para próximo etapa para você fornecer dados e simular seu prazo exato?"
+
+Se perceber a vontade do lead em continuar passe para o próximo agent AI "INBOUND" (Em Anexo) continuar acionado a tool: update_sheet
+Caso perceba a desconfiança use o tool: knowledgeDoc que contém informações sobre a Empresa de Crédito VN Promotora CNPJ:23.529.979/0001-95
+Informe também a landing page com mais informações sobre o crédito consignado INSS da VN Promotora: https://credito.vidanovapromotora.com.br/  
+Se mesmo assim a desconfiança permanecer ou o lead quiser falar ou acionar um atendente humano, acione a tool: suporteAtendente - envie uma mensagem que o atendente irá atende-la da melhor forma possível pois depois que essa tool suporteAtendente for acionado o lead é bloqueado do sistema de atendimento automatizado.
+
+Material para o marketing agressivo de conversão, utilize como inspiração para criar o conteúdo do agente OUTBOUND:
+"ATENÇÃO, APOSENTADO E PENSIONISTA DO INSS! 💰🚀
+
+EMPRÉSTIMO CONSIGNADO COM NOVO PRAZO TURBO: PEGUE HOJE E PAGUE SÓ EM 3 MESES!
+Agora é oficial! O INSS liberou as melhores condições EVER para você turbinar sua vida financeira.
+
+    Crédito NA HORA no seu bolso HOJE MESMO.
+
+    Primeira parcela? DAQUI A 3 MESES! Sem aperto agora, só folga total.
+
+    Prazo gigante de 108 MESES (9 ANOS) para pagar devagarinho, com desconto automático e direto no benefício – sem surpresas!
+
+Por quê esperar? Taxas baixíssimas, aprovação relâmpago e valores que cabem NO SEU BOLSO. Reforma sua casa, quite dívidas, compre o que sonha ou invista na família SEM MEDO! Milhares já pegaram – VOCÊ é o próximo?"
+
+Importante:
+ - agent AI "INBOUND" (Em Anexo) talvez precise de modificação para tanto servir esse contexto do agent AI "OUTBOUND" como para servir (como ele faz muito bem hoje) os lead que vem dos anúncios. Sugira uma modificação mas me avise antes de prosseguir se tiver que mexer no prompt do agent AI "INBOUND".
+ - Se tiver faltando alguma informação para realizar a tarefa me avise.
+ - Estamos trabalhamo com o llm gpt-5-mini da openai use como referência na elaboração do prompt - podemos mudar para outro llm da linha openAI se precisar muito mas precisamos manter os custo semelhantes ao que gpt-5-mini gasta. Se for muito importante aumentar a capacidade do llm pode ser feita mas que não sai muito do gasto do pgt-5-mini.
+
+
+---
+
 ## 👽 :10/04/2026
 
 ::::::::::::::::::: v10 ::::::::::::::::::
