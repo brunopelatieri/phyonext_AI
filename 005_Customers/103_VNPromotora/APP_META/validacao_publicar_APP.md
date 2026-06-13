@@ -1,5 +1,71 @@
 ## 👽 :11/06/2026
 
+
+---
+
+# Plataforma -----------------
+
+---
+
+## 1. Onde podemos encontrar este app? (obrigatória)
+
+pt-br:
+
+https://vidanovapromotora.com.br
+O formulário principal de captação está na página inicial. Há também formulários equivalentes em:
+- https://vidanovapromotora.com.br/credito-consignado-clt
+- https://vidanovapromotora.com.br/credito-consignado-siape
+
+
+en:
+
+https://vidanovapromotora.com.br
+
+The main lead form is on the homepage. Equivalent forms are also available at:
+- https://vidanovapromotora.com.br/credito-consignado-clt
+- https://vidanovapromotora.com.br/credito-consignado-siape
+
+
+---
+
+## 2. Instruções de como acessar o app para análise (obrigatória)
+
+pt-br:
+
+O aplicativo é um site público, sem necessidade de login ou cadastro de usuário para ser acessado.
+
+Importante: este app NÃO utiliza o Facebook Login. As integrações com a Meta são:
+1. WhatsApp Business Platform (Cloud API) — usada para atendimento aos clientes que solicitam crédito consignado.
+2. Meta Pixel e Conversions API — usadas apenas para mensuração de campanhas publicitárias.
+
+Como testar o fluxo:
+1. Acesse https://vidanovapromotora.com.br
+2. Clique em "Simular Meu Crédito Agora" ou role até o formulário.
+3. Preencha a Etapa 1 com nome, e-mail, celular e CPF e clique em "Próximo".
+4. Na Etapa 2, selecione as opções de perfil (benefício, idade, situação, etc.).
+5. Marque o checkbox obrigatório de consentimento: "Concordo em receber mensagens e atendimento pelo WhatsApp e li a Política de Privacidade e os Termos de Uso".
+6. Clique em "Concluir". O usuário é então direcionado ao atendimento via WhatsApp.
+
+Para testar a permissão whatsapp_business_messaging, envie uma mensagem para o nosso número comercial de produção do WhatsApp (Cloud API): +55 79 9934-3719. Este é o número oficial em uso pela empresa. Responderemos dentro da janela de atendimento. O envio de mensagens só ocorre após o usuário fornecer o número e consentir expressamente por meio do checkbox obrigatório.
+
+en:
+
+The application is a public website and does not require login or user registration to be accessed.
+
+Important: this app does NOT use Facebook Login. The Meta integrations are:
+1. WhatsApp Business Platform (Cloud API) — used to provide customer support to users requesting payroll-deductible loans.
+2. Meta Pixel and Conversions API — used only for advertising campaign measurement.
+
+How to test the flow:
+1. Go to https://vidanovapromotora.com.br
+2. Click "Simular Meu Crédito Agora" (Simulate My Loan Now) or scroll to the form.
+3. Fill in Step 1 with name, email, mobile phone, and CPF, then click "Próximo" (Next).
+4. In Step 2, select the profile options (benefit, age, situation, etc.).
+5. Check the mandatory consent checkbox: "I agree to receive messages and support via WhatsApp and I have read the Privacy Policy and Terms of Use".
+6. Click "Concluir" (Finish). The user is then directed to support via WhatsApp.
+
+To test the whatsapp_business_messaging permission, send a message to our production WhatsApp business number (Cloud API): +55 79 9934-3719. This is the official number currently used by the company. We will reply within the customer service window. Messages are only sent after the user provides their number and gives explicit consent through the mandatory checkbox.
+
 ---
 
 ### PT-BR:
